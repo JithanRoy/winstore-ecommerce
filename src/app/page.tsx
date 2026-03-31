@@ -48,7 +48,7 @@ export default async function Home() {
         }
       />
 
-      <main className=" w-full px-4 pb-12 pt-2 sm:px-6 lg:px-8">
+      <main className="w-full px-4 pb-12 pt-2 sm:px-6 lg:px-8">
         <CategoryShowcase cards={showcaseCards} />
 
         <section className="mt-8 space-y-10">
@@ -62,9 +62,8 @@ export default async function Home() {
 
           <CategoryDeals sections={homePageData.categorySections} />
         </section>
-
-        <SiteFooter />
       </main>
+      <SiteFooter />
     </div>
   );
 }

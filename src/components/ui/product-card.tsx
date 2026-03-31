@@ -42,7 +42,7 @@ export function ProductCard({ product }: { product: Product }) {
 
         <Link
           href={`/products/${product.id}`}
-          className="mt-3 inline-flex h-7 items-center justify-center bg-[var(--brand-500)] text-[11px] text-white transition hover:bg-[#159fc1]"
+          className="mt-3 inline-flex h-7 items-center justify-center bg-[var(--brand-500)] text-[11px] !text-white transition hover:bg-[#159fc1]"
         >
           Add to cart
         </Link>

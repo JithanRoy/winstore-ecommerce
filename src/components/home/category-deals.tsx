@@ -23,14 +23,14 @@ export function CategoryDeals({
   }
 
   return (
-    <section id="best-deals" className="mt-16">
+    <section id="best-deals" className="mt-10 sm:mt-12 lg:mt-16">
       <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-        <h2 className="font-display text-[30px] leading-none text-[#2b2b2b]">
+        <h2 className="font-display text-[24px] leading-none text-[#2b2b2b] sm:text-[27px] lg:text-[30px]">
           <span className="text-[var(--brand-500)]">Best</span> Deals
         </h2>
 
         <div className="flex flex-col gap-3 xl:items-end">
-          <div className="flex flex-wrap items-center gap-5 text-[10px] uppercase tracking-[0.03em] text-[#585858]">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] uppercase tracking-[0.03em] text-[#585858] sm:gap-5">
             {sections.map((section, index) => {
               const isActive = index === activeIndex;
 
@@ -80,7 +80,7 @@ export function CategoryDeals({
         </div>
       </div>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div className="mt-5 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {activeSection.products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

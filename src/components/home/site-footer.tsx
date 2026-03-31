@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -10,98 +11,142 @@ import {
 const footerColumns = [
   {
     title: "Trending",
-    links: ["Installments", "Tech Notes", "Grocery", "Health & Beauty"],
+    links: [
+      "Installments",
+      "Electronics",
+      "Grocery",
+      "Health & Beauty",
+      "Home Appliances",
+      "Mobile Accessories",
+    ],
   },
   {
     title: "Information",
-    links: ["About Us", "Contact Us", "FAQs", "Shipping & Return"],
+    links: [
+      "About Us",
+      "Contact Us",
+      "FAQs",
+      "Shipping & Return",
+      "Privacy policy",
+      "Terms & Conditions",
+    ],
   },
   {
     title: "Customer Care",
-    links: ["My Account", "Track Your Order", "Wishlist", "Become a Vendor"],
+    links: [
+      "My Account",
+      "Track Your Order",
+      "Recently Viewed",
+      "Wishlist",
+      "Compare",
+      "Become a Vendor",
+    ],
   },
-] as const;
-
-const paymentBadges = [
-  { label: "Visa", className: "bg-white text-[#1a4fa1]" },
-  { label: "Master", className: "bg-white text-[#ef6b1d]" },
-  { label: "Cash", className: "bg-white text-[#303030]" },
-  { label: "PayPal", className: "bg-white text-[#1598d6]" },
 ] as const;
 
 export function SiteFooter() {
   return (
-    <footer id="site-footer" className="mt-14 bg-[var(--footer)] text-white">
-      <div className="px-8 py-10 sm:px-10">
-        <div className="grid gap-10 lg:grid-cols-[1.45fr,1fr,1fr,1fr]">
-          <div>
-            <div className="flex items-end gap-1">
-              <span className="font-display text-[28px] font-bold leading-none">
-                WiN
-              </span>
-              <span className="pb-[3px] text-[10px] font-semibold text-white/60">
-                store
-              </span>
-            </div>
-            <p className="mt-4 text-[15px] text-[var(--brand-400)]">
-              Get questions? Call us 24/7
+    <footer id="site-footer" className="mt-12 bg-[#3b3b3b] text-white sm:mt-14">
+      <div className="px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-12 xl:px-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+          <div className="max-w-[290px] shrink-0">
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src="/logo-winstore.svg"
+                alt="Winstore logo"
+                width={132}
+                height={48}
+                className="h-[42px] w-auto brightness-0 invert"
+              />
+            </Link>
+
+            <p className="mt-6 text-[17px] leading-none text-[var(--brand-400)]">
+              Got questions? Call us 24/7!
             </p>
-            <div className="mt-3 space-y-1 text-[11px] leading-5 text-white/60">
-              <p>+01 111 444 888</p>
-              <p>contact@winstore.dev</p>
-              <p>Monitored support.</p>
+
+            <div className="mt-4 space-y-0.5 text-[12px] leading-[1.7] text-white">
+              <p>03 111 666 144</p>
+              <p>0317 1777015.</p>
             </div>
-            <p className="mt-5 text-[15px] text-[var(--brand-400)]">
+
+            <p className="mt-6 text-[17px] leading-none text-[var(--brand-400)]">
               Contact info
             </p>
-            <div className="mt-2 flex items-center gap-3 text-white/75">
-              <a href="https://facebook.com" aria-label="Facebook">
-                <FacebookIcon className="size-4" />
+
+            <p className="mt-2 text-[12px] text-white">info@winstore.pk</p>
+
+            <div className="mt-4 flex items-center gap-4 text-white">
+              <a
+                href="https://facebook.com"
+                aria-label="Facebook"
+                className="transition hover:text-white"
+              >
+                <FacebookIcon className="size-6" />
               </a>
-              <a href="https://twitter.com" aria-label="Twitter">
-                <TwitterIcon className="size-4" />
+              <a
+                href="https://twitter.com"
+                aria-label="Twitter"
+                className="transition hover:text-white"
+              >
+                <TwitterIcon className="size-6" />
               </a>
-              <a href="https://linkedin.com" aria-label="LinkedIn">
-                <LinkedInIcon className="size-4" />
+              <a
+                href="https://linkedin.com"
+                aria-label="LinkedIn"
+                className="transition hover:text-white"
+              >
+                <LinkedInIcon className="size-6" />
               </a>
-              <a href="https://instagram.com" aria-label="Instagram">
-                <InstagramIcon className="size-4" />
+              <a
+                href="https://instagram.com"
+                aria-label="Instagram"
+                className="transition hover:text-white"
+              >
+                <InstagramIcon className="size-6" />
               </a>
             </div>
           </div>
 
-          {footerColumns.map((column) => (
-            <div key={column.title}>
-              <h3 className="text-[16px] text-[var(--brand-400)]">
-                {column.title}
-              </h3>
-              <ul className="mt-5 space-y-2 text-[11px] leading-5 text-white/60">
-                {column.links.map((link) => (
-                  <li key={link}>
-                    <Link href="/" className="transition hover:text-white">
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className="flex-1 lg:max-w-[760px]">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+              {footerColumns.map((column) => (
+                <div key={column.title} className="lg:pt-[4px]">
+                  <h3 className="text-[17px] font-medium leading-none text-[var(--brand-400)]">
+                    {column.title}
+                  </h3>
+                  <ul className="mt-5 space-y-1.5 text-[12px] leading-[1.65] text-white">
+                    {column.links.map((link) => (
+                      <li key={link}>
+                        <Link
+                          href="/"
+                          className="transition hover:text-[var(--brand-400)]"
+                        >
+                          {link}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-end gap-2">
-          {paymentBadges.map((badge) => (
-            <span
-              key={badge.label}
-              className={`inline-flex h-8 items-center rounded-[3px] px-3 text-[11px] font-semibold uppercase ${badge.className}`}
-            >
-              {badge.label}
-            </span>
-          ))}
+            <div className="mt-8 flex justify-start lg:justify-end">
+              <div className="w-full lg:w-auto">
+                <Image
+                  src="/footer-payments.png"
+                  alt="Accepted payment methods"
+                  width={430}
+                  height={73}
+                  className="h-auto w-[240px] sm:w-[300px] lg:ml-auto lg:w-[412px] pr-30"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="bg-[#161616] px-8 py-3 text-[11px] text-white/55 sm:px-10">
-        © 2021 Winstore. All Right Reserved.
+      <div className="bg-[#171717] px-6 py-4 text-[11px] text-white sm:px-8 lg:px-10 xl:px-12">
+        © 2021 Winstore. All Rights Reserved.
       </div>
     </footer>
   );
