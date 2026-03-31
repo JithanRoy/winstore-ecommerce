@@ -12,13 +12,15 @@ type ShowcaseCard = {
 
 function ShowcaseArrow({ direction }: { direction: "left" | "right" }) {
   const Icon = direction === "left" ? ChevronLeftIcon : ChevronRightIcon;
+  const positionClass =
+    direction === "left" ? "left-[-28px]" : "right-[-28px]";
 
   return (
     <div
       aria-hidden="true"
-      className="hidden items-center justify-center text-[#1b1b1b] xl:flex"
+      className={`absolute top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/88 text-[#1b1b1b] shadow-[0_8px_18px_-14px_rgba(0,0,0,0.45)] xl:flex ${positionClass}`}
     >
-      <Icon className="size-8 stroke-[1.4]" />
+      <Icon className="size-7 stroke-[1.4]" />
     </div>
   );
 }
@@ -27,11 +29,11 @@ export function CategoryShowcase({ cards }: { cards: ShowcaseCard[] }) {
   return (
     <section
       id="category-showcase"
-      className="relative border-b border-[#ececec] px-4 py-3 sm:px-5"
+      className="relative border-b border-[#ececec] py-3"
     >
-      <div className="flex items-center gap-4">
+      <div className="relative">
         <ShowcaseArrow direction="left" />
-        <div className="grid flex-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {cards.map((card) => (
             <Link
               key={card.title}

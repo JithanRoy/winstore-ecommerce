@@ -38,21 +38,20 @@ export default async function Home() {
   }));
 
   return (
-    <div className="min-h-screen bg-[var(--page-bg)] px-3 py-3 sm:px-4">
-      <div className="mx-auto max-w-[1048px] px-1 text-[11px] text-[#b8b8b8]">
-        Home Page
-      </div>
-      <div className="site-shell mx-auto mt-1 max-w-[1048px] overflow-hidden bg-white">
-        <SiteHeader categories={homePageData.categories} />
-        <HeroBanner
-          products={
-            heroProducts.length > 0
-              ? heroProducts
-              : homePageData.featuredProducts.slice(0, 3)
-          }
-        />
+    <div className="min-h-screen mx-auto">
+      <SiteHeader categories={homePageData.categories} />
+      <HeroBanner
+        products={
+          heroProducts.length > 0
+            ? heroProducts
+            : homePageData.featuredProducts.slice(0, 3)
+        }
+      />
+
+      <main className=" w-full px-4 pb-12 pt-2 sm:px-6 lg:px-8">
         <CategoryShowcase cards={showcaseCards} />
-        <main className="px-8 pb-16 pt-8 sm:px-10">
+
+        <section className="mt-8 space-y-10">
           <ProductSection
             id="new-arrivals"
             accent="New"
@@ -60,10 +59,12 @@ export default async function Home() {
             subtitle="This section uses the all-products endpoint and intentionally caps the list at 10 recent items, matching the assessment note."
             products={homePageData.recentProducts}
           />
+
           <CategoryDeals sections={homePageData.categorySections} />
-        </main>
+        </section>
+
         <SiteFooter />
-      </div>
+      </main>
     </div>
   );
 }

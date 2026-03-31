@@ -26,7 +26,7 @@ const supportingLinks = [
 export function SiteHeader({ categories }: { categories: Category[] }) {
   return (
     <header className="bg-[#0a4a4c] text-white">
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 px-5 py-[12px] lg:flex-nowrap">
+      <div className="flex min-h-[52px] flex-wrap items-center gap-x-7 gap-y-3 px-6 py-[8px] lg:flex-nowrap">
         <Link href="/" className="flex shrink-0 items-center">
           <Image
             src="/logo-winstore.svg"
@@ -34,15 +34,15 @@ export function SiteHeader({ categories }: { categories: Category[] }) {
             width={135}
             height={48}
             priority
-            className="h-[32px] w-auto"
+            className="h-[36px] w-auto"
           />
         </Link>
 
-        <div className="flex h-[32px] min-w-0 flex-1 overflow-hidden rounded-[3px] bg-white text-[12px] text-slate-500 lg:max-w-[430px]">
-          <label className="relative flex w-[118px] shrink-0 items-center border-r border-[#e8e8e8]">
+        <div className="flex h-[31px] min-w-0 flex-1 overflow-hidden rounded-[3px] bg-white text-[11px] text-slate-500 lg:max-w-[440px]">
+          <label className="relative flex w-[116px] shrink-0 items-center border-r border-[#e8e8e8]">
             <select
               aria-label="Browse product categories"
-              className="h-full w-full appearance-none bg-transparent pl-4 pr-7 text-[#848484] outline-none"
+              className="h-full w-full appearance-none bg-transparent pl-4 pr-7 text-[#8a8a8a] outline-none"
               defaultValue=""
             >
               <option value="">All categories</option>
@@ -64,49 +64,50 @@ export function SiteHeader({ categories }: { categories: Category[] }) {
           <button
             type="button"
             aria-label="Submit search"
-            className="flex w-[32px] items-center justify-center bg-[#dedede] text-[#6e6e6e]"
+            className="flex w-[31px] items-center justify-center bg-[#d8d8d8] text-[#6e6e6e]"
           >
-            <SearchIcon className="size-4" />
+            <SearchIcon className="size-[13px]" />
           </button>
         </div>
 
-        <div className="ml-auto flex items-center gap-4">
-          <div className="hidden text-right text-[10px] leading-[1.3] text-white/95 sm:block">
-            <p className="text-white/80">Call Us Now</p>
-            <p>+011 5827918</p>
-            <Link href="/" className="mt-[3px] block">
+        <div className="ml-auto flex items-center gap-5">
+          <div className="hidden text-right text-[9px] leading-[1.25] text-white/95 sm:block">
+            <p className="text-white/70">Call Us Now</p>
+            <p className="mt-[1px]">+011 5827918</p>
+            <Link href="/" className="mt-[4px] block">
               Sign In
             </Link>
           </div>
 
-          <div className="flex items-center gap-[14px]">
+          <div className="flex items-center gap-4">
             <Link href="/" aria-label="Account">
-              <UserIcon className="size-[16px]" />
+              <UserIcon className="size-[15px] stroke-[1.9]" />
             </Link>
             <Link href="/" aria-label="Wishlist">
-              <HeartIcon className="size-[16px]" />
+              <HeartIcon className="size-[15px] stroke-[1.9]" />
             </Link>
-            <Link href="/" aria-label="Cart" className="relative">
-              <CartIcon className="size-[16px]" />
-              <span className="absolute -right-[7px] -top-[6px] text-[9px] font-semibold">
+            <Link href="/" aria-label="Cart" className="relative flex items-center gap-1">
+              <span className="absolute -right-[4px] -top-[5px] text-[8px] font-semibold">
                 3
               </span>
+              <CartIcon className="size-[15px] stroke-[1.9]" />
+              <span className="hidden text-[11px] text-white/95 lg:inline">Cart</span>
             </Link>
           </div>
         </div>
       </div>
 
-      <div className="flex h-[36px] items-center justify-between bg-[#083d40] px-5 text-[12px]">
+      <div className="flex h-[28px] items-center justify-between bg-[#083d40] px-6 text-[10px]">
         <div className="flex min-w-0 items-center gap-5 overflow-hidden">
           <Link
             href="#best-deals"
-            className="inline-flex shrink-0 items-center gap-2 font-medium"
+            className="inline-flex shrink-0 items-center gap-2 font-medium text-white/95"
           >
-            <MenuIcon className="size-[13px]" />
-            <span className="text-[13px]">Browse By Category</span>
+            <MenuIcon className="size-[11px]" />
+            <span className="text-[11px]">Browse By Category</span>
           </Link>
 
-          <nav className="flex min-w-0 items-center gap-5 overflow-hidden whitespace-nowrap text-white/90">
+          <nav className="flex min-w-0 items-center gap-7 overflow-hidden whitespace-nowrap text-white/85">
             {supportingLinks.map((link) => (
               <Link
                 key={link.label}
@@ -121,16 +122,16 @@ export function SiteHeader({ categories }: { categories: Category[] }) {
 
         <div className="ml-4 flex shrink-0 items-center gap-4 text-white">
           <a href="https://facebook.com" aria-label="Facebook">
-            <FacebookIcon className="size-[14px]" />
+            <FacebookIcon className="size-[12px]" />
           </a>
           <a href="https://twitter.com" aria-label="Twitter">
-            <TwitterIcon className="size-[14px]" />
+            <TwitterIcon className="size-[12px]" />
           </a>
           <a href="https://linkedin.com" aria-label="LinkedIn">
-            <LinkedInIcon className="size-[14px]" />
+            <LinkedInIcon className="size-[12px]" />
           </a>
           <a href="https://instagram.com" aria-label="Instagram">
-            <InstagramIcon className="size-[14px]" />
+            <InstagramIcon className="size-[12px]" />
           </a>
         </div>
       </div>

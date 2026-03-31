@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --page-bg: #efefef;
+  --page-bg: #ffffff;
   --foreground: #1f2222;
   --muted: #617072;
   --brand-950: #062d2f;
@@ -30,13 +30,15 @@
 }
 
 html {
-  background: var(--page-bg);
+  background: #fff;
+  min-height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   min-height: 100vh;
-  background: var(--page-bg);
+  background: #fff;
   color: var(--foreground);
   font-family: var(--font-sans-stack);
 }
@@ -93,12 +95,6 @@ textarea {
 
 .float-gentle {
   animation: float-gentle 5s ease-in-out infinite;
-}
-
-.site-shell {
-  box-shadow:
-    0 0 0 1px rgb(0 0 0 / 4%),
-    0 10px 32px -28px rgb(0 0 0 / 35%);
 }
 
 @media (prefers-reduced-motion: reduce) {
