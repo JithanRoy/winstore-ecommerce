@@ -32,8 +32,8 @@ npm run dev
 
 ## Deliverable Links
 
-- GitHub repository: `REPLACE_WITH_GITHUB_REPOSITORY_LINK`
-- Live Vercel URL: `REPLACE_WITH_VERCEL_LIVE_LINK`
+- GitHub repository: `https://github.com/JithanRoy/winstore-ecommerce`
+- Live Vercel URL: `https://winstore-ecommerce-one.vercel.app/`
 
 ## Architecture
 
