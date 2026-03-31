@@ -1,0 +1,108 @@
+# Project Codex: Front-End Developer Assessment (Next.js + API Integration)
+
+## Objective
+Build a pixel-accurate e-commerce web app from the provided Figma using Next.js App Router, TypeScript, Tailwind CSS, React Server Components, and Server Actions for all API interactions.
+
+## Tech Stack (Required)
+- Next.js 15+ (App Router)
+- React Server Components
+- TypeScript
+- Tailwind CSS
+- Server Actions (mandatory for API calls)
+
+## Hard Constraints (Do Not Violate)
+- Do NOT use `pages/` directory.
+- Do NOT use Redux, Zustand, or unnecessary state libraries.
+- Do NOT use `fetch()` in client components.
+- Do NOT use axios in client components.
+- Do NOT call APIs directly from client components.
+- Do NOT call any database directly.
+- Use only the provided API endpoints.
+
+## API Integration Rules
+- All API communication must happen via Server Actions only.
+- Keep API logic centralized in server-side action files (e.g. `src/actions/*`).
+- Use typed request/response models.
+- Handle API failures explicitly (network/server/invalid response).
+- Return normalized data structures from actions.
+- Use `revalidate` / cache controls intentionally and document rationale.
+
+## Allowed Patterns
+- Server Components by default.
+- Client Components only when interaction requires browser APIs/hooks.
+- `fetch` is allowed only in server actions.
+- Next.js built-in caching and revalidation controls are allowed.
+
+## Design Requirements (Figma Fidelity)
+Figma:
+https://www.figma.com/design/UAQ0gFBqYduDOatXQqBJIY/E-commerce-web-site?node-id=0-1&t=axIG6ScXeXkDDxdG-1
+
+Implementation must closely match:
+- Layout and section structure
+- Colors and typography
+- Spacing and sizing
+- Buttons and states
+- Responsive behavior (mobile/tablet/desktop)
+
+Pixel-accurate implementation is expected.
+
+## API Endpoints
+- All products: `https://mm-assesment-server.vercel.app/api/v1/products`
+- Categories: `https://mm-assesment-server.vercel.app/api/v1/products/categories`
+- Products by category (example): `https://mm-assesment-server.vercel.app/api/v1/products/category/jewelry`
+- Single product (example): `https://mm-assesment-server.vercel.app/api/v1/products/1`
+
+## Architecture Guidelines
+- Prefer small, reusable, typed components.
+- Keep a clear folder structure, for example:
+  - `src/app` (routes/layout/pages)
+  - `src/components` (UI and feature components)
+  - `src/actions` (server actions only)
+  - `src/lib` (helpers, formatters, constants)
+  - `src/types` (API/domain types)
+- Keep business/data transformation logic out of UI components.
+- Keep components presentational when possible.
+
+## Validation & Error Handling
+- Validate API data shape before rendering.
+- Gracefully handle loading, empty, and error states.
+- Show user-friendly fallback messages.
+- Avoid crashing UI on malformed API responses.
+
+## Code Quality Standards
+- Strict TypeScript usage (avoid `any` unless justified).
+- Keep functions/components focused and readable.
+- Use descriptive naming and consistent file organization.
+- No dead code, no duplicated logic, no unnecessary abstraction.
+- Follow ESLint and formatting rules in the repo.
+
+## Performance Expectations
+- Use Server Components for data-heavy rendering.
+- Minimize client-side JS.
+- Optimize images and avoid unnecessary rerenders.
+- Use Next.js caching/revalidation intentionally per route/data type.
+
+## Definition of Done
+A task is complete only if:
+1. Feature/UI matches Figma section requirements.
+2. API data flows through Server Actions only.
+3. Responsive behavior is correct across breakpoints.
+4. Types are accurate and error states handled.
+5. Lint/build pass successfully.
+6. Changes are maintainable and clearly structured.
+
+## Deliverables Checklist
+- GitHub repository link
+- Live Vercel deployment link
+- `README.md` including:
+  - setup/run instructions
+  - architecture explanation
+  - assumptions made
+- `.env.example` with all required env variable keys (no secrets)
+
+## Agent Output Style
+When making changes:
+- Briefly explain what changed and why.
+- List touched file paths.
+- Mention validation done (lint/build/manual checks).
+- Suggest logical next steps only when helpful.
