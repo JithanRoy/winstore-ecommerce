@@ -30,6 +30,11 @@ npm run dev
 
 4. Open `http://localhost:3000`
 
+## Deliverable Links
+
+- GitHub repository: `REPLACE_WITH_GITHUB_REPOSITORY_LINK`
+- Live Vercel URL: `REPLACE_WITH_VERCEL_LIVE_LINK`
+
 ## Architecture
 
 ### 1. App Router pages
